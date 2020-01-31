@@ -298,6 +298,8 @@ if(ENABLE_GAME)
 	endif(NOT APPLE)
 
 	target_link_libraries(wesnoth
+		${MINGW_SDL2_LIBS}
+		wesnoth-game
 		wesnoth-client
 		lua
 		wesnoth-core
@@ -306,6 +308,7 @@ if(ENABLE_GAME)
 		${WIDGETS_LIB}
 		wesnoth-client
 		${game-external-libs}
+		${MINGW_LIBS}
 	)
 	set_target_properties(wesnoth
 		PROPERTIES OUTPUT_NAME ${BINARY_PREFIX}wesnoth${BINARY_SUFFIX}
@@ -333,6 +336,7 @@ if(ENABLE_SERVER)
 			${Boost_RANDOM_LIBRARY}
 			${CRYPTO_LIBRARY}
 			${MYSQL_LIBS}
+			${MINGW_LIBS}
 		)
 	set_target_properties(wesnothd PROPERTIES OUTPUT_NAME ${BINARY_PREFIX}wesnothd${BINARY_SUFFIX})
 
