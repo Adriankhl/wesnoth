@@ -118,6 +118,12 @@ endif(X11_FOUND)
 if(APPLE)
 	set(game-external-libs ${game-external-libs} "-framework IOKit")
 endif(APPLE)
+
+if(MINGW)
+	set(server-external-libs ${server-external-libs} ${MINGW_SYSTEM_LIBS})
+	set(game-external-libs ${game-external-libs} ${MINGW_SYSTEM_LIBS})
+endif(MINGW)
+
 ########### Set Library mode ###############
 
 if(ENABLE_SHARED_LIBRARIES)
@@ -298,6 +304,7 @@ if(ENABLE_GAME)
 	endif(NOT APPLE)
 
 	target_link_libraries(wesnoth
+		wesnoth-game
 		wesnoth-client
 		lua
 		wesnoth-core
