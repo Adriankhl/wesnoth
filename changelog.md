@@ -1,5 +1,16 @@
+## Version 1.14.11
+ ### Language and i18n
+   * Updated translations: Czech, German.
+ ### Packaging
+   * Fixed data/dist information not being found on many platforms other than Windows (only
+     with the installer-created shortcut), as well as only the very first word being read instead
+     of the whole line.
+   * Added support for systemctl reload.
+ ### Miscellaneous and bug fixes
+   * Silenced spurious warning about conflicting l10n-track files (issue #4716).
+
 ## Version 1.14.10
- ### AI:
+ ### AI
    * Experimental AI:
      * Spread poison: bug fix for units ignoring [avoid] tag
      * Castle switch: bug fix for units-on-keep check
